@@ -1,6 +1,10 @@
-/* =====================
-   RESET GLOBAL
-===================== */
+:root {
+  --blue: #0b3c6d;
+  --orange: #f26a21;
+  --dark: #1c1c1c;
+  --light: #ffffff;
+  --gray: #f4f6f8;
+}
 
 * {
   margin: 0;
@@ -9,249 +13,168 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background: #f7f9fb;
-  color: #1f2933;
+  font-family: 'Montserrat', sans-serif;
+  background: var(--gray);
+  color: var(--dark);
   line-height: 1.7;
 }
 
-/* =====================
-   CONTENEDOR
-===================== */
-
-.container {
-  max-width: 1150px;
-  margin: auto;
-  padding: 0 1.5rem;
-}
-
-/* =====================
-   HEADER
-===================== */
-
-.header {
-  background: #ffffff;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.2rem 0;
-}
-
-.logo-circle svg {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-}
-
-.logo-circle.small svg {
-  width: 60px;
-  height: 60px;
-}
-
-.nav a {
-  margin-left: 1.5rem;
-  text-decoration: none;
-  color: #334155;
-  font-weight: 500;
-}
-
-.nav a:hover {
-  color: #1FA2A6;
-}
-
-/* =====================
-   BOTONES
-===================== */
-
-.btn-primary,
-.btn-secondary {
-  padding: 0.7rem 1.6rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: #F26B1D;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #d85c16;
-}
-
-.btn-secondary {
-  border: 2px solid #1FA2A6;
-  color: #1FA2A6;
-}
-
-.btn-secondary:hover {
-  background: #1FA2A6;
-  color: #fff;
-}
-
-/* =====================
-   HERO
-===================== */
-
+/* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #1FA2A6, #1A4D5F);
-  color: white;
-  padding: 6rem 0;
+  background: linear-gradient(rgba(11,60,109,.85), rgba(11,60,109,.85)),
+    url('https://images.unsplash.com/photo-1451187580459-43490279c0fa');
+  background-size: cover;
+  background-position: center;
+  padding: 120px 20px;
   text-align: center;
+  color: var(--light);
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 20px;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 1rem;
 }
 
 .subtitle {
-  max-width: 750px;
-  margin: auto;
-  font-size: 1.15rem;
-  opacity: 0.95;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
-/* =====================
-   SECCIONES
-===================== */
+/* ===== NAV ===== */
+.navbar {
+  background: var(--blue);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  padding: 15px;
+}
+
+.navbar a {
+  color: var(--light);
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: var(--orange);
+}
+
+/* ===== SECTIONS ===== */
 .section {
-  padding: 5rem 0;
+  padding: 80px 20px;
 }
 
-.light-bg {
-  background: #eef4f6;
+.container {
+  max-width: 1100px;
+  margin: auto;
 }
 
-.section h2 {
+.highlight {
+  background: var(--blue);
+  color: var(--light);
+}
+
+h2 {
   text-align: center;
-  font-size: 2.3rem;
-  margin-bottom: 2.5rem;
-  color: #1A4D5F;
+  margin-bottom: 40px;
+  color: var(--orange);
 }
 
-/* =====================
-   GRID 2 COLUMNAS
-===================== */
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 3rem;
-  align-items: center;
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 30px;
+  margin: 10px;
+  font-weight: 600;
 }
 
-/* =====================
-   IMÁGENES
-===================== */
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+.btn.primary {
+  background: var(--orange);
+  color: var(--light);
 }
 
-.img-round {
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+.btn.secondary {
+  border: 2px solid var(--light);
+  color: var(--light);
 }
 
-/* =====================
-   CARDS
-===================== */
+.btn:hover {
+  opacity: 0.9;
+}
 
+/* ===== CARDS ===== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
 }
 
 .card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  background: var(--light);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: transform .3s ease;
 }
 
-.card img {
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card i {
+  font-size: 2rem;
+  color: var(--orange);
+  margin-bottom: 15px;
+}
+
+/* ===== DONATE ===== */
+.donate-box {
+  text-align: center;
+  background: var(--light);
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 40px auto;
+}
+
+/* ===== CONTACT ===== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.contact-form input,
+.contact-form textarea {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  padding: 12px;
+  margin-bottom: 15px;
 }
 
-.card h3 {
-  padding: 1rem 1.5rem 0.5rem;
-  color: #1FA2A6;
+.social-links a {
+  font-size: 1.8rem;
+  margin-right: 15px;
+  color: var(--orange);
 }
 
-.card p {
-  padding: 0 1.5rem 1.5rem;
-  font-size: 0.95rem;
-}
-
-/* =====================
-   LISTAS
-===================== */
-
-.list {
-  max-width: 600px;
-  margin: auto;
-  list-style: none;
-}
-
-.list li {
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.list li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #1FA2A6;
-  font-weight: bold;
-}
-
-/* =====================
-   DONAR
-===================== */
-
-.donate {
-  background: linear-gradient(135deg, #1A4D5F, #0f2f3a);
-  color: white;
-  text-align: center;
-}
-
-.donate p {
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-}
-
-/* =====================
-   FOOTER
-===================== */
-
+/* ===== FOOTER ===== */
 .footer {
-  background: #0f2f3a;
-  color: white;
-  padding: 3rem 0;
+  background: var(--dark);
+  color: var(--light);
   text-align: center;
+  padding: 40px 20px;
 }
 
-.footer p {
-  margin-top: 1rem;
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
 
