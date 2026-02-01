@@ -2,14 +2,14 @@
    VARIABLES DE COLOR (ONG MODERNA)
 ================================ */
 :root {
-  primary: 1a4d5f;     /* azul profundo */
-  secondary: 1fa2a6;   /* turquesa */
-  accent: f2a93b;      /* dorado espiritual */
-  dark: 0b1f26;
-  light: f3f9f9;
-  white: ffffff;
-  text: 2c2c2c;
-  text-soft:5f6f73;
+  primary: #1a4d5f;     /* azul profundo */
+  secondary: #1fa2a6;   /* turquesa */
+  accent: #f2a93b;      /* dorado espiritual */
+  dark: #0b1f26;
+  light: #f3f9f9;
+  white: #ffffff;
+  text: #2c2c2c;
+  text-soft: #5f6f73;
 }
 
 /* ================================
@@ -77,7 +77,7 @@ body {
   margin-left: 1.6rem;
   text-decoration: none;
   font-weight: 500;
-  color: var(--primary);
+  color: var(primary);
   position: relative;
 }
 
