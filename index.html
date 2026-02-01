@@ -1,144 +1,172 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The World United (TWU) es un movimiento global y fundación sin fines de lucro dedicada a despertar una conciencia de unidad incondicional en la humanidad." />
+  <meta name="keywords" content="The World United, TWU, unidad, espiritualidad, conciencia global, fundación" />
+  <meta name="author" content="The World United" />
+  <title>The World United (TWU) | Unidad Planetaria</title>
 
-  <title>Tribu del Mundo Unido | Unidad Incondicional</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <meta name="description" content="Tribu del Mundo Unido es un movimiento global sin fines de lucro dedicado a despertar una conciencia de unidad incondicional en la humanidad.">
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Externo -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="header">
-  <div class="container header-content">
-
-    <!-- LOGO CORREGIDO -->
-    <div class="logo-circle">
-      <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="400" cy="400" r="380" fill="none" stroke="#F2A93B" stroke-width="18"/>
-
-        <path d="M320,330 Q350,310 400,320 T500,340 L520,380 Q500,430 450,460 T350,480 L320,460 Z" fill="#1FA2A6"/>
-        <path d="M420,260 Q450,250 480,265 L500,290 L460,310 Z" fill="#1FA2A6"/>
-
-        <g fill="none" stroke="#F26B1D" stroke-width="28" stroke-linecap="round">
-          <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(-5, 400, 380)"/>
-          <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(60, 400, 380)"/>
-          <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(-60, 400, 380)"/>
-        </g>
-        <text x="400" y="650" text-anchor="middle"
-              font-size="88" font-weight="700"
-              fill="#1A4D5F" letter-spacing="6">
-          MUNDO UNIDO
-        </text>
-      </svg>
-    </div>
-
-    <nav class="nav">
-      <a href="#vision">Visión</a>
-      <a href="#impacto">Impacto</a>
-      <a href="#participar">Participar</a>
-      <a href="#donate" class="btn-secondary">Donar</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Tribu del Mundo Unido</h1>
-    <p class="subtitle">
-      Un movimiento global que despierta la conciencia de unidad, amor y acción consciente en la humanidad.
-    </p>
-  </div>
-</section>
-
-<!-- HISTORIA -->
-<section class="section">
-  <div class="container grid-2">
-    <div>
-      <h2>Nuestra Historia</h2>
-      <p>
-        Fundada en 2007, Tribu del Mundo Unido nace como una respuesta consciente a la fragmentación
-        de la humanidad. Desde entonces, ha unido líderes, comunidades y corazones en todos los continentes.
-      </p>
-      <p>
-        No somos una organización basada en la autoridad, sino en la sabiduría compartida.
-        Caminamos juntos como una sola humanidad.
-      </p>
-    </div>
-
-    <img class="img-round"
-      src="https://images.unsplash.com/photo-1520975916090-3105956dac38"
-      alt="Unidad global">
-  </div>
-</section>
-
-<!-- IMPACTO -->
-<section class="section light-bg" id="impacto">
-  <div class="container">
-    <h2>Ejemplos de Impacto Real</h2>
-
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="">
-        <h3>Conclaves Comunitarios</h3>
-        <p>Espacios locales de sanación, diálogo y unidad espiritual.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
-        <h3>Cumbres Regionales</h3>
-        <p>Encuentros que unen culturas, religiones y visiones.</p>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
-        <h3>Festivales Globales</h3>
-        <p>Miles de personas vibrando juntas por la paz planetaria.</p>
+  <!-- ===== HEADER ===== -->
+  <header id="inicio" class="hero">
+    <div class="hero-content">
+      <img src="img/logo-twu.png" alt="The World United Logo" class="logo" />
+      <h1>THE WORLD UNITED</h1>
+      <p class="subtitle">Un movimiento global para la unidad incondicional de la humanidad</p>
+      <div class="hero-buttons">
+        <a href="#vision" class="btn primary">Nuestra Visión</a>
+        <a href="#donaciones" class="btn secondary">Donar</a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- PARTICIPAR -->
-<section class="section" id="participar">
-  <div class="container">
-    <h2>¿Cómo Puedes Participar?</h2>
-    <ul class="list">
-      <li>Unirte a un Consejo de Unidad local</li>
-      <li>Participar en eventos y encuentros</li>
-      <li>Compartir la visión de unidad</li>
-      <li>Apoyar con donaciones conscientes</li>
+  <!-- ===== NAV ===== -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#que-es">¿Qué es TWU?</a></li>
+      <li><a href="#vision">Visión</a></li>
+      <li><a href="#mision">Misión</a></li>
+      <li><a href="#como">Cómo lo hacemos</a></li>
+      <li><a href="#actividades">Actividades</a></li>
+      <li><a href="#alcance">Alcance</a></li>
+      <li><a href="#contacto">Contacto</a></li>
     </ul>
-  </div>
-</section>
+  </nav>
 
-<!-- DONAR -->
-<section class="section donate" id="donate">
-  <div class="container">
-    <h2>Sé Parte del Cambio</h2>
-    <p>contacto@tribudelmundounido.org</p>
-
-    <a href="https://www.paypal.com/donate" class="btn-primary" target="_blank">
-      Donar con PayPal
-    </a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    <div class="logo-circle small">
-      <!-- mismo SVG -->
+  <!-- ===== QUE ES ===== -->
+  <section id="que-es" class="section">
+    <h2>¿Qué es The World United?</h2>
+    <div class="container">
+      <p>The World United (TWU) es una fundación sin fines de lucro y un movimiento global dedicado a despertar una conciencia de unidad incondicional en la humanidad.</p>
+      <p>TWU conecta, invita y co-crea con personas, líderes e instituciones comprometidas con la evolución personal y planetaria, trabajando juntos como un solo cuerpo global para generar una transformación positiva y sostenible.</p>
+      <p>Fundada en 2007 y registrada como organización sin fines de lucro en India, TWU impulsa el registro de sus consejos con estatus de exención fiscal equivalente al 501(c) de los Estados Unidos.</p>
     </div>
-    <p>© 2007–2026 Tribu del Mundo Unido</p>
-  </div>
-</footer>
+  </section>
+
+  <!-- ===== MOVIMIENTO ===== -->
+  <section class="section highlight">
+    <h2>Un Movimiento Global de Unidad</h2>
+    <div class="container">
+      <p>No está gobernado por una sola persona ni por una ideología. Funciona mediante consejos interconectados a nivel local, estatal, nacional y global.</p>
+      <p>TWU representa un salto cuántico en la evolución de la conciencia humana hacia una humanidad consciente y unificada.</p>
+    </div>
+  </section>
+
+  <!-- ===== VISION ===== -->
+  <section id="vision" class="section">
+    <h2>Visión</h2>
+    <div class="container">
+      <p>Crear una conciencia de unidad incondicional en todo el mundo, sin barreras de género, idioma, cultura, religión o nacionalidad.</p>
+    </div>
+  </section>
+
+  <!-- ===== MISION ===== -->
+  <section id="mision" class="section">
+    <h2>Misión</h2>
+    <div class="container">
+      <p>Elevar el nivel de conciencia, armonía, espiritualidad y amor a nivel global, contribuyendo a una paz sostenible mediante la creación de consejos de unidad a nivel:</p>
+      <ul class="list">
+        <li>Global</li>
+        <li>Nacional</li>
+        <li>Estatal / Provincial</li>
+        <li>Distrital / Comunitario</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== COMO ===== -->
+  <section id="como" class="section">
+    <h2>Cómo lo Hacemos</h2>
+    <div class="cards">
+      <div class="card"><i class="fas fa-users"></i><h3>Líderes Transformacionales</h3><p>Impulsando acciones conscientes para el cambio global.</p></div>
+      <div class="card"><i class="fas fa-spa"></i><h3>Sabiduría Espiritual</h3><p>Maestros, sanadores y científicos espirituales.</p></div>
+      <div class="card"><i class="fas fa-globe"></i><h3>Educación Global</h3><p>Filosofía y educación para la unidad planetaria.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== ACTIVIDADES ===== -->
+  <section id="actividades" class="section">
+    <h2>Actividades</h2>
+    <div class="container">
+      <p><strong>Tema Central:</strong> Transformación Personal para la Unidad Planetaria</p>
+      <ul class="list">
+        <li>Conclaves de Unidad</li>
+        <li>Cumbres “Somos Uno”</li>
+        <li>Festivales Nacionales de Transformación Global</li>
+        <li>Parlamentos Mundiales de Espiritualidad</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== ALCANCE ===== -->
+  <section id="alcance" class="section highlight">
+    <h2>Alcance Global</h2>
+    <div class="stats">
+      <div class="stat">6 Continentes</div>
+      <div class="stat">200 Naciones</div>
+      <div class="stat">8 Mil Millones de Personas</div>
+      <div class="stat">10,000 Influenciadores Espirituales</div>
+    </div>
+  </section>
+
+  <!-- ===== DONACIONES ===== -->
+  <section id="donaciones" class="section highlight">
+    <h2>Apoya la Unidad Global</h2>
+    <div class="container">
+      <p>Tu donación permite que The World United continúe expandiendo la conciencia de unidad, paz y armonía en todo el planeta.</p>
+      <div class="donate-box">
+        <p><strong>Haz una donación segura a través de PayPal</strong></p>
+        <a href="https://www.paypal.com/donate" target="_blank" class="btn primary">
+          <i class="fab fa-paypal"></i> Donar con PayPal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <div class="container contact-grid">
+
+      <form class="contact-form">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo electrónico" required>
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit" class="btn primary">Enviar mensaje</button>
+      </form>
+
+      <div class="contact-info">
+        <p>Conéctate con The World United a través de nuestras redes oficiales:</p>
+        <div class="social-links">
+          <a href="https://wa.me/0000000000" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>T.E.A.M – Together Everyone Achieves Miracles</p>
+    <p>© 2026 The World United (TWU)</p>
+  </footer>
 
 </body>
 </html>
