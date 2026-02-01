@@ -8,7 +8,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Icons -->
+  <!-- ICONOS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <!-- ===== HERO ===== -->
 <header class="hero">
   <div class="hero-content">
-    <img src="img/logo-twu.jpeg" alt="EL MUNDO UNIDO" class="logo">
+    <img src="img/logo.png" alt="EL MUNDO UNIDO" class="logo">
     <h1>EL MUNDO UNIDO</h1>
     <p class="subtitle">
       Un movimiento global para la unidad incondicional de la humanidad
@@ -25,27 +25,36 @@
   </div>
 </header>
 
-<!-- ===== INFO ===== -->
+<!-- ===== VISIÓN / MISIÓN / ACTIVIDADES ===== -->
 <section class="section info">
   <div class="cards">
     <div class="card">
       <h2>Visión</h2>
-      <p>Un mundo unido por la paz, la cooperación y el respeto entre todos los seres humanos.</p>
+      <p>
+        Crear una conciencia de unidad incondicional en toda la humanidad,
+        sin barreras de cultura, religión o nacionalidad.
+      </p>
     </div>
 
     <div class="card">
       <h2>Misión</h2>
-      <p>Conectar personas y líderes conscientes para elevar la humanidad hacia un futuro armónico.</p>
+      <p>
+        Elevar la conciencia global mediante la cooperación,
+        la espiritualidad y la acción consciente.
+      </p>
     </div>
 
     <div class="card">
       <h2>Actividades</h2>
-      <p>Eventos, campañas sociales, encuentros espirituales y proyectos comunitarios.</p>
+      <p>
+        Conclaves de unidad, encuentros espirituales,
+        festivales de transformación y proyectos comunitarios.
+      </p>
     </div>
   </div>
 </section>
 
-<!-- ===== ALCANCE ===== -->
+<!-- ===== ALCANCE GLOBAL ===== -->
 <section class="section alcance">
   <h2>Alcance Global</h2>
 
@@ -62,7 +71,7 @@
 
     <div class="alcance-card">
       <img src="img/personas.png" alt="">
-      <h3>8 Mil Millones</h3>
+      <h3>8 Mil Millones de Personas</h3>
     </div>
 
     <div class="alcance-card">
@@ -75,7 +84,10 @@
 <!-- ===== DONAR ===== -->
 <section class="section donar" id="donar">
   <h2>Apoya la Unidad Global</h2>
-  <p>Tu donación ayuda a expandir la conciencia, la paz y la armonía en el mundo.</p>
+  <p>
+    Tu donación permite expandir la conciencia,
+    la paz y la armonía en el mundo.
+  </p>
 
   <a href="https://www.paypal.com/donate" target="_blank" class="btn">
     <i class="fab fa-paypal"></i> Donar con PayPal
@@ -83,35 +95,41 @@
 </section>
 
 <!-- ===== CONTACTO ===== -->
-<section class="section contacto">
+<section class="section contacto" id="contacto">
   <h2>Contacto</h2>
 
   <form
-  action="https://formsubmit.co/vissuetmikel0@gmail.com"
-  method="POST"
-  class="contact-form">
+    action="https://formsubmit.co/vissuetmikel0@gmail.com"
+    method="POST"
+    class="contact-form">
 
-  <!-- Opciones ocultas -->
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_subject" value="Nuevo mensaje - EL MUNDO UNIDO">
-  <input type="hidden" name="_template" value="table">
+    <!-- CONFIGURACIÓN FORMSUBMIT -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="Nuevo mensaje - EL MUNDO UNIDO">
+    <input type="hidden" name="_template" value="table">
 
-  <!-- Campos -->
-  <input type="text" name="nombre" placeholder="Tu nombre" required>
-  <input type="email" name="email" placeholder="Tu correo" required>
-  <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
+    <!-- REDIRECCIÓN CORRECTA A TU SITIO -->
+    <input
+      type="hidden"
+      name="_next"
+      value="https://mundounido.github.io/mundo-unido/#gracias">
 
-  <button type="submit" class="btn">Enviar mensaje</button>
-</form>
+    <!-- CAMPOS -->
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo electrónico" required>
+    <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
 
+    <button type="submit" class="btn">Enviar mensaje</button>
+  </form>
+
+  <!-- MENSAJE DE AGRADECIMIENTO -->
   <div id="gracias" class="mensaje-gracias">
-  <h3>¡Gracias por contactarnos! 🌍</h3>
-  <p>
-    Hemos recibido tu mensaje correctamente.<br>
-    Muy pronto el equipo de <strong>EL MUNDO UNIDO</strong> se pondrá en contacto contigo.
-  </p>
-</div>
-
+    <h3>¡Gracias por contactarnos! 🌍</h3>
+    <p>
+      Hemos recibido tu mensaje correctamente.<br>
+      Muy pronto el equipo de <strong>EL MUNDO UNIDO</strong> se pondrá en contacto contigo.
+    </p>
+  </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
@@ -122,12 +140,16 @@
     <a href="#"><img src="img/x.png" alt=""></a>
   </div>
 
-  <p><a href="legal.html">Aviso legal y donaciones</a></p>
+  <p>
+    <a href="legal.html">Aviso legal y donaciones</a>
+  </p>
+
   <p>© 2026 EL MUNDO UNIDO</p>
 </footer>
 
 </body>
 </html>
+
 
 
 
