@@ -9,41 +9,32 @@
   <meta name="description" content="Tribu del Mundo Unido es un movimiento global sin fines de lucro dedicado a despertar una conciencia de unidad incondicional en la humanidad.">
 
   <link rel="stylesheet" href="css/styles.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header class="header">
   <div class="container header-content">
 
-    <!-- LOGO CIRCULAR -->
+    <!-- LOGO CORREGIDO -->
     <div class="logo-circle">
       <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="400" cy="400" r="380" fill="none" stroke="#F2A93B" stroke-width="18"/>
 
-        <circle cx="400" cy="400" r="380" fill="#ffffff"/>
+        <path d="M320,330 Q350,310 400,320 T500,340 L520,380 Q500,430 450,460 T350,480 L320,460 Z" fill="#1FA2A6"/>
+        <path d="M420,260 Q450,250 480,265 L500,290 L460,310 Z" fill="#1FA2A6"/>
 
-        <!-- símbolo -->
-        <path d="M320,330 Q350,310 400,320 T500,340 L520,380 Q500,430 450,460 T350,480 L320,460 Z" fill="#0081C6"/>
-        <path d="M420,260 Q450,250 480,265 L500,290 L460,310 Z" fill="#0081C6"/>
-
-        <g fill="none" stroke="#F16522" stroke-width="30" stroke-linecap="round">
+        <g fill="none" stroke="#F26B1D" stroke-width="28" stroke-linecap="round">
           <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(-5, 400, 380)"/>
           <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(60, 400, 380)"/>
           <ellipse cx="400" cy="380" rx="260" ry="75" transform="rotate(-60, 400, 380)"/>
         </g>
 
-        <!-- texto -->
-        <text x="400" y="640"
-              text-anchor="middle"
-              font-size="90"
-              font-weight="700"
-              fill="#0081C6"
-              letter-spacing="6"
-              font-family="Arial, sans-serif">
+        <text x="400" y="650" text-anchor="middle"
+              font-size="88" font-weight="700"
+              fill="#1A4D5F" letter-spacing="6">
           MUNDO UNIDO
         </text>
       </svg>
@@ -51,103 +42,104 @@
 
     <nav class="nav">
       <a href="#vision">Visión</a>
-      <a href="#mission">Misión</a>
-      <a href="#initiatives">Iniciativas</a>
-      <a href="#global">Alcance</a>
+      <a href="#impacto">Impacto</a>
+      <a href="#participar">Participar</a>
       <a href="#donate" class="btn-secondary">Donar</a>
     </nav>
-
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container reveal">
+  <div class="container">
     <h1>Tribu del Mundo Unido</h1>
     <p class="subtitle">
-      Un movimiento global para despertar la conciencia de unidad incondicional en la humanidad.
+      Un movimiento global que despierta la conciencia de unidad, amor y acción consciente en la humanidad.
     </p>
   </div>
 </section>
 
-<section class="section reveal">
+<!-- HISTORIA -->
+<section class="section">
+  <div class="container grid-2">
+    <div>
+      <h2>Nuestra Historia</h2>
+      <p>
+        Fundada en 2007, Tribu del Mundo Unido nace como una respuesta consciente a la fragmentación
+        de la humanidad. Desde entonces, ha unido líderes, comunidades y corazones en todos los continentes.
+      </p>
+      <p>
+        No somos una organización basada en la autoridad, sino en la sabiduría compartida.
+        Caminamos juntos como una sola humanidad.
+      </p>
+    </div>
+
+    <img class="img-round"
+      src="https://images.unsplash.com/photo-1520975916090-3105956dac38"
+      alt="Unidad global">
+  </div>
+</section>
+
+<!-- IMPACTO -->
+<section class="section light-bg" id="impacto">
   <div class="container">
-    <h2>¿Qué es la Tribu del Mundo Unido?</h2>
-    <p>
-      Somos una fundación sin fines de lucro y un movimiento global que conecta, invita y co-crea
-      con personas comprometidas con la evolución personal y planetaria.
-    </p>
-  </div>
-</section>
-
-<section class="section light-bg grid-2 container reveal" id="vision">
-  <div>
-    <h2>Visión</h2>
-    <p>
-      Crear una conciencia de unidad incondicional en todo el mundo,
-      sin barreras de género, idioma, cultura o religión.
-    </p>
-  </div>
-
-  <div id="mission">
-    <h2>Misión</h2>
-    <p>
-      Elevar la conciencia, la armonía y la espiritualidad a nivel global
-      mediante consejos de unidad en todos los niveles de la sociedad.
-    </p>
-  </div>
-</section>
-
-<section class="section reveal" id="initiatives">
-  <div class="container">
-    <h2>Principales Iniciativas</h2>
+    <h2>Ejemplos de Impacto Real</h2>
 
     <div class="cards">
-      <div class="card">Conclaves de Unidad Comunitarios</div>
-      <div class="card">Cumbres Regionales “Somos Uno”</div>
-      <div class="card">Festivales Nacionales de Transformación Global</div>
-      <div class="card">Parlamentos Mundiales de Espiritualidad</div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d" alt="">
+        <h3>Conclaves Comunitarios</h3>
+        <p>Espacios locales de sanación, diálogo y unidad espiritual.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d" alt="">
+        <h3>Cumbres Regionales</h3>
+        <p>Encuentros que unen culturas, religiones y visiones.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+        <h3>Festivales Globales</h3>
+        <p>Miles de personas vibrando juntas por la paz planetaria.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="section light-bg reveal" id="global">
-  <div class="container stats">
-    <div><strong>6</strong><span>Continentes</span></div>
-    <div><strong>200</strong><span>Naciones</span></div>
-    <div><strong>8B</strong><span>Personas</span></div>
-    <div><strong>10,000+</strong><span>Influenciadores</span></div>
+<!-- PARTICIPAR -->
+<section class="section" id="participar">
+  <div class="container">
+    <h2>¿Cómo Puedes Participar?</h2>
+    <ul class="list">
+      <li>Unirte a un Consejo de Unidad local</li>
+      <li>Participar en eventos y encuentros</li>
+      <li>Compartir la visión de unidad</li>
+      <li>Apoyar con donaciones conscientes</li>
+    </ul>
   </div>
 </section>
 
-<section class="section donate reveal" id="donate">
+<!-- DONAR -->
+<section class="section donate" id="donate">
   <div class="container">
-    <h2>Apoya Nuestra Misión</h2>
+    <h2>Sé Parte del Cambio</h2>
     <p>contacto@tribudelmundounido.org</p>
 
-    <a href="https://www.paypal.com/donate" target="_blank" class="btn-primary">
+    <a href="https://www.paypal.com/donate" class="btn-primary" target="_blank">
       Donar con PayPal
     </a>
   </div>
 </section>
 
 <footer class="footer">
-  <div class="container footer-content">
-    <p>© 2007–2026 Tribu del Mundo Unido. Todos los derechos reservados.</p>
+  <div class="container">
+    <div class="logo-circle small">
+      <!-- mismo SVG -->
+    </div>
+    <p>© 2007–2026 Tribu del Mundo Unido</p>
   </div>
 </footer>
-
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  reveals.forEach(r => observer.observe(r));
-</script>
 
 </body>
 </html>
