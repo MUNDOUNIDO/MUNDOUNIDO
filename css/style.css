@@ -256,4 +256,42 @@ body {
   padding: 3rem 1.5rem;
   font-size: 0.95rem;
 }
+/* GLASS EFFECT */
+.card, .alcance-card {
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.85);
+}
+
+/* TITULOS CON COLOR */
+h2 {
+  color: #ff7a18;
+  margin-bottom: 1rem;
+}
+
+/* LEGAL */
+.legal {
+  max-width: 900px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+.legal h1 {
+  margin-bottom: 2rem;
+}
+
+.legal h2 {
+  margin-top: 2rem;
+}
+
+/* MOBILE FIX */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .logo {
+    width: 90px;
+  }
+}
+
 
