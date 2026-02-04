@@ -15,28 +15,16 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  scroll-snap-type: y mandatory;
+  line-height: 1.7;
 }
 
-.snap {
-  scroll-snap-align: start;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ===== LAYOUT ===== */
+/* ===== HELPERS ===== */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -50,7 +38,18 @@ img {
   align-items: center;
 }
 
-/* ===== REVEAL ===== */
+.section {
+  padding: 7rem 0;
+}
+
+h2 {
+  color: var(--orange);
+  margin-bottom: 2rem;
+  font-size: 2.6rem;
+  text-align: center;
+}
+
+/* ===== ANIM ===== */
 .reveal {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
@@ -59,9 +58,10 @@ img {
 .delay-1 { animation-delay: .2s; }
 .delay-2 { animation-delay: .4s; }
 .delay-3 { animation-delay: .6s; }
+.delay-4 { animation-delay: .8s; }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(70px); }
+  from { opacity: 0; transform: translateY(60px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
@@ -72,9 +72,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
-  overflow: hidden;
+  color: white;
 }
 
 .hero-bg {
@@ -85,7 +84,6 @@ img {
 
 .hero-content {
   position: relative;
-  z-index: 2;
   max-width: 720px;
 }
 
@@ -97,24 +95,18 @@ img {
   margin: 0 auto 2rem;
 }
 
-.hero h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  letter-spacing: -2px;
-}
-
 .subtitle {
   margin: 1.5rem 0 3rem;
-  opacity: .9;
 }
 
 /* ===== BUTTON ===== */
 .btn {
-  padding: 1rem 3.2rem;
+  padding: 1rem 3rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  transition: all .4s ease;
+  transition: .4s ease;
 }
 
 .btn-primary {
@@ -125,28 +117,6 @@ img {
 .btn:hover {
   transform: translateY(-10px);
   box-shadow: 0 30px 60px rgba(0,0,0,.3);
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  padding: 7rem 0;
-}
-
-.section h2 {
-  color: var(--orange);
-  margin-bottom: 2rem;
-  font-size: 2.4rem;
-}
-
-/* ===== IMAGES ===== */
-.img-main {
-  border-radius: var(--radius);
-  box-shadow: 0 45px 90px rgba(0,0,0,.25);
-  transition: transform .6s ease;
-}
-
-.img-main:hover {
-  transform: scale(1.05);
 }
 
 /* ===== CARDS ===== */
@@ -161,121 +131,126 @@ img {
   padding: 3rem;
   border-radius: var(--radius);
   text-align: center;
-  transition: transform .5s ease;
   box-shadow: 0 30px 60px rgba(0,0,0,.12);
 }
 
-.card:hover {
-  transform: translateY(-18px);
+.card img {
+  width: 60px;
+  margin: 0 auto 1.5rem;
 }
 
-.card img {
-  width: 56px;
-  margin: 0 auto 1.5rem;
+/* ===== IMAGES ===== */
+.img-main {
+  border-radius: var(--radius);
+  box-shadow: 0 45px 90px rgba(0,0,0,.25);
 }
 
 /* ===== PARALLAX ===== */
 .parallax {
-  min-height: 80vh;
-  background-image: url("../assets/img/institucional-unity.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: url("../assets/img/institucional-unity.jpg") center/cover fixed;
+  position: relative;
 }
 
-.parallax-content {
-  background: rgba(0,0,0,.6);
+.parallax-overlay {
+  background: rgba(0,0,0,.65);
   color: white;
-  padding: 4.5rem;
+  padding: 5rem;
   border-radius: var(--radius);
+  max-width: 900px;
+  margin: auto;
   text-align: center;
 }
 
-/* ===== PRINCIPIOS MEJORADOS ===== */
+/* ===== PRINCIPIOS ===== */
 .principios {
   background: linear-gradient(135deg, var(--blue), var(--dark));
   color: white;
-  text-align: center;
 }
 
-.principios-cards {
+.principios-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 3rem;
 }
 
-.principio-card {
+.principio {
   background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
   padding: 3rem 2rem;
   border-radius: var(--radius);
-  transition: transform .4s ease, box-shadow .4s ease;
+  text-align: center;
 }
 
-.principio-card:hover {
-  transform: translateY(-14px);
-  box-shadow: 0 30px 60px rgba(0,0,0,.4);
-}
-
-.principio-card img {
+.principio img {
   width: 52px;
   margin-bottom: 1.5rem;
 }
 
-/* ===== INSTITUCIONAL ===== */
-.institucional-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+.team {
+  text-align: center;
+  margin-top: 4rem;
 }
 
-.highlight {
-  color: var(--orange);
-  font-weight: 600;
+/* ===== INSTITUCIONAL ===== */
+.institucional {
+  position: relative;
+  color: white;
+}
+
+.timeline-bg {
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/timeline-evolution.jpg") center/cover;
+  filter: brightness(.35);
+}
+
+.institucional-content {
+  position: relative;
+  text-align: center;
+}
+
+.timeline {
+  margin-top: 3rem;
 }
 
 .timeline-item {
   background: white;
+  color: var(--text);
   padding: 1.4rem;
   margin-bottom: 1rem;
   border-left: 5px solid var(--orange);
   border-radius: 14px;
 }
 
-/* ===== ALAS MEJORADO ===== */
+/* ===== ALAS ===== */
+.alas {
+  background: white;
+}
+
 .alas-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 2rem;
 }
 
-.ala-card {
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+.ala {
+  background: linear-gradient(135deg, #fff, #f0f0f0);
   padding: 1.8rem;
-  border-radius: 18px;
-  font-weight: 600;
-  text-align: center;
-  transition: transform .4s ease;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-.ala-card:hover {
-  transform: translateY(-10px);
-}
-
-/* ===== DONAR ===== */
-.donar {
-  background: white;
-  text-align: center;
+.ala summary {
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 /* ===== FOOTER ===== */
 .footer {
   background: var(--dark);
   color: white;
+}
+
+.footer-overlay {
   text-align: center;
   padding: 4rem 1.5rem;
 }
@@ -295,35 +270,29 @@ img {
 
 .socials a {
   color: white;
-  font-size: 1.4rem;
   width: 48px;
   height: 48px;
   border-radius: 50%;
+  background: rgba(255,255,255,.1);
   display: flex;
-  justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,0.1);
-  transition: background .3s ease, transform .3s ease;
+  justify-content: center;
+  transition: .3s;
 }
 
 .socials a:hover {
   background: var(--orange);
-  transform: translateY(-6px);
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .grid-2,
-  .institucional-grid {
+  .grid-2 {
     grid-template-columns: 1fr;
   }
 
   .parallax {
     background-attachment: scroll;
   }
-
-  body {
-    scroll-snap-type: none;
-  }
 }
+
 
