@@ -8,7 +8,9 @@
   --radius: 36px;
 }
 
-/* RESET */
+/* =====================================================
+  RESET / BASE
+===================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -21,10 +23,20 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.6;
+  scroll-snap-type: y mandatory;
 }
 
-/* ===== HELPERS ===== */
+.snap { scroll-snap-align: start; }
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =====================================================
+  LAYOUT
+===================================================== */
 .container {
   max-width: 1200px;
   margin: auto;
@@ -38,18 +50,9 @@ body {
   align-items: center;
 }
 
-.section {
-  padding: 7rem 0;
-}
-
-h2 {
-  color: var(--orange);
-  margin-bottom: 2rem;
-  font-size: 2.6rem;
-  text-align: center;
-}
-
-/* ===== ANIM ===== */
+/* =====================================================
+  ANIMACIONES
+===================================================== */
 .reveal {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
@@ -58,22 +61,24 @@ h2 {
 .delay-1 { animation-delay: .2s; }
 .delay-2 { animation-delay: .4s; }
 .delay-3 { animation-delay: .6s; }
-.delay-4 { animation-delay: .8s; }
 
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(60px); }
+  from { opacity: 0; transform: translateY(70px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== HERO ===== */
+/* =====================================================
+  HERO
+===================================================== */
 .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
   color: white;
+  text-align: center;
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -84,6 +89,7 @@ h2 {
 
 .hero-content {
   position: relative;
+  z-index: 2;
   max-width: 720px;
 }
 
@@ -95,18 +101,26 @@ h2 {
   margin: 0 auto 2rem;
 }
 
-.subtitle {
-  margin: 1.5rem 0 3rem;
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  letter-spacing: -2px;
 }
 
-/* ===== BUTTON ===== */
+.subtitle {
+  margin: 1.5rem 0 3rem;
+  opacity: .9;
+}
+
+/* =====================================================
+  BOTONES
+===================================================== */
 .btn {
-  padding: 1rem 3rem;
+  padding: 1rem 3.2rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   display: inline-block;
-  transition: .4s ease;
+  transition: all .4s ease;
 }
 
 .btn-primary {
@@ -119,7 +133,31 @@ h2 {
   box-shadow: 0 30px 60px rgba(0,0,0,.3);
 }
 
-/* ===== CARDS ===== */
+/* =====================================================
+  SECCIONES
+===================================================== */
+.section { padding: 7rem 0; }
+
+.section h2 {
+  color: var(--orange);
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+}
+
+/* =====================================================
+  IMÁGENES
+===================================================== */
+.img-main {
+  border-radius: var(--radius);
+  box-shadow: 0 45px 90px rgba(0,0,0,.25);
+  transition: transform .6s ease;
+}
+
+.img-main:hover { transform: scale(1.05); }
+
+/* =====================================================
+  CARDS
+===================================================== */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
@@ -131,126 +169,115 @@ h2 {
   padding: 3rem;
   border-radius: var(--radius);
   text-align: center;
+  transition: transform .5s ease;
   box-shadow: 0 30px 60px rgba(0,0,0,.12);
 }
 
+.card:hover { transform: translateY(-18px); }
+
 .card img {
-  width: 60px;
+  width: 56px;
   margin: 0 auto 1.5rem;
 }
 
-/* ===== IMAGES ===== */
-.img-main {
-  border-radius: var(--radius);
-  box-shadow: 0 45px 90px rgba(0,0,0,.25);
-}
-
-/* ===== PARALLAX ===== */
+/* =====================================================
+  PARALLAX
+===================================================== */
 .parallax {
-  background: url("../assets/img/institucional-unity.jpg") center/cover fixed;
-  position: relative;
+  min-height: 80vh;
+  background-image: url("../assets/img/institucional-unity.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.parallax-overlay {
-  background: rgba(0,0,0,.65);
+.parallax-content {
+  background: rgba(0,0,0,.6);
   color: white;
-  padding: 5rem;
+  padding: 4.5rem;
   border-radius: var(--radius);
-  max-width: 900px;
-  margin: auto;
   text-align: center;
 }
 
-/* ===== PRINCIPIOS ===== */
+/* =====================================================
+  PRINCIPIOS
+===================================================== */
 .principios {
   background: linear-gradient(135deg, var(--blue), var(--dark));
   color: white;
+  text-align: center;
 }
 
-.principios-grid {
+.principios-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 3rem;
 }
 
-.principio {
+.principio-card {
   background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
   padding: 3rem 2rem;
   border-radius: var(--radius);
-  text-align: center;
 }
 
-.principio img {
-  width: 52px;
-  margin-bottom: 1.5rem;
+/* =====================================================
+  INSTITUCIONAL
+===================================================== */
+.institucional-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
 }
 
-.team {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-/* ===== INSTITUCIONAL ===== */
-.institucional {
-  position: relative;
-  color: white;
-}
-
-.timeline-bg {
-  position: absolute;
-  inset: 0;
-  background: url("../assets/img/timeline-evolution.jpg") center/cover;
-  filter: brightness(.35);
-}
-
-.institucional-content {
-  position: relative;
-  text-align: center;
-}
-
-.timeline {
-  margin-top: 3rem;
+.highlight {
+  color: var(--orange);
+  font-weight: 600;
 }
 
 .timeline-item {
   background: white;
-  color: var(--text);
   padding: 1.4rem;
   margin-bottom: 1rem;
   border-left: 5px solid var(--orange);
   border-radius: 14px;
 }
 
-/* ===== ALAS ===== */
-.alas {
-  background: white;
-}
-
+/* =====================================================
+  ALAS
+===================================================== */
 .alas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.ala {
-  background: linear-gradient(135deg, #fff, #f0f0f0);
+.ala-card {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
   padding: 1.8rem;
-  border-radius: 20px;
-  cursor: pointer;
+  border-radius: 18px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.ala summary {
-  font-weight: 700;
-  margin-bottom: 1rem;
+/* =====================================================
+  DONAR
+===================================================== */
+.donar {
+  background: white;
+  text-align: center;
 }
 
-/* ===== FOOTER ===== */
+/* =====================================================
+  FOOTER
+===================================================== */
 .footer {
   background: var(--dark);
   color: white;
-}
-
-.footer-overlay {
   text-align: center;
   padding: 4rem 1.5rem;
 }
@@ -268,62 +295,18 @@ h2 {
   margin: 2rem 0;
 }
 
-.socials a {
-  color: white;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: .3s;
-}
-
-.socials a:hover {
-  background: var(--orange);
-}
-
-/* ===== RESPONSIVE ===== */
+/* =====================================================
+  RESPONSIVE
+===================================================== */
 @media (max-width: 900px) {
-  .grid-2 {
+  .grid-2,
+  .institucional-grid {
     grid-template-columns: 1fr;
   }
 
-  .parallax {
-    background-attachment: scroll;
-  }
-}
-/* ===== BOTÓN PAYPAL ===== */
-.btn-paypal {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 1rem 2.8rem;
-  background: #0070ba;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+  .parallax { background-attachment: scroll; }
 
-.btn-paypal:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  body { scroll-snap-type: none; }
 }
-
-/* ===== DONATE BOX ===== */
-.donate-box {
-  max-width: 780px;
-  margin: auto;
-  text-align: center;
-}
-
-.principios-text p {
-  max-width: 820px;
-  margin: 0 auto 1rem;
-  text-align: center;
-}
-
 
 
