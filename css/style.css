@@ -1,251 +1,305 @@
-/* =========================
-   RESET & BASE
-========================= */
+/* =====================================================
+   VARIABLES GLOBALES
+===================================================== */
+:root {
+  --blue: #0c3c6f;
+  --orange: #f36b21;
+  --bg: #f5f7fa;
+  --text: #1d1d1f;
+  --white: #ffffff;
+  --radius: 22px;
+}
+
+/* =====================================================
+   RESET GENERAL
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --bg-light: #f7f9fb;
-  --bg-soft: #eef2f5;
-  --bg-dark: #0f172a;
-  --primary: #2563eb;
-  --secondary: #22c55e;
-  --accent: #facc15;
-  --text-dark: #1f2933;
-  --text-light: #ffffff;
-  --card-bg: #ffffff;
-  --border-soft: rgba(0,0,0,0.08);
-}
-
+/* =====================================================
+   ESTILOS BASE
+===================================================== */
 body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
-  line-height: 1.6;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
 }
 
-/* =========================
-   GLOBAL SECTIONS
-========================= */
-.section {
-  padding: 5rem 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  margin-bottom: 2.5rem;
-  font-weight: 700;
-}
-
-/* =========================
-   HERO / SECCIÓN 1
-========================= */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(
-    rgba(15,23,42,0.65),
-    rgba(15,23,42,0.65)
-  ),
-  url("assets/img/hero-humanity-unity.jpg") center/cover no-repeat;
-  color: var(--text-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero img {
-  max-width: 150px;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  max-width: 680px;
-  margin: 0 auto 2rem;
-  font-size: 1.15rem;
-  opacity: 0.95;
-}
-
-.hero .btn {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  background: var(--secondary);
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform .3s, box-shadow .3s;
-}
-
-.hero .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 30px rgba(0,0,0,.25);
-}
-
-/* =========================
-   SECCIÓN 2 – INTRO
-========================= */
-.intro-box {
-  background: var(--card-bg);
-  border-radius: 20px;
-  padding: 3rem;
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  box-shadow: 0 25px 60px rgba(0,0,0,.08);
-}
-
-.intro-box img {
-  width: 100%;
-  border-radius: 18px;
-}
-
-/* =========================
-   SECCIÓN 3 – TARJETAS
-========================= */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-}
-
-.card {
-  background: var(--card-bg);
-  padding: 2.5rem;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,.08);
-}
-
-/* =========================
-   SECCIÓN 4 – PARALLAX
-========================= */
-.parallax {
-  background: linear-gradient(
-    rgba(255,255,255,.9),
-    rgba(255,255,255,.9)
-  ),
-  url("assets/img/institucional-unity.jpg") center/cover fixed;
-}
-
-.parallax-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.parallax-content img {
-  max-width: 380px;
-  margin: 0 auto;
+img {
+  max-width: 100%;
   display: block;
 }
 
-.parallax-text {
-  background: var(--card-bg);
-  padding: 2.5rem;
-  border-radius: 18px;
-  box-shadow: 0 20px 45px rgba(0,0,0,.1);
+/* =====================================================
+   ANIMACIONES GENERALES
+===================================================== */
+.reveal {
+  opacity: 0;
+  animation: fadeUp 1s ease forwards;
 }
 
-/* =========================
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   ESTRUCTURA GENERAL DE SECCIONES
+===================================================== */
+.section {
+  padding: 4.5rem 1.4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  color: var(--orange);
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+/* =====================================================
+   CAJAS DE TEXTO / CONTENEDORES
+===================================================== */
+.text-box,
+.donar-box {
+  background: var(--white);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+}
+
+/* =====================================================
+   BOTONES GENERALES
+===================================================== */
+.btn {
+  display: inline-block;
+  padding: 1.1rem 2.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--orange), #ff914d);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+}
+
+/* =====================================================
+   SECCIÓN 1 – HERO
+===================================================== */
+.hero {
+  min-height: 90vh;
+  background: radial-gradient(circle at top, #184f8c, #061c33);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem 1.2rem;
+}
+
+.logo {
+  width: 170px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  background: white;
+  padding: 12px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: .8rem;
+}
+
+.slogan {
+  font-size: 1.15rem;
+  margin: 1.4rem 0;
+  opacity: .95;
+}
+
+/* =====================================================
+   GRIDS GENERALES (SECCIONES 2–4–7)
+===================================================== */
+.esencia-grid,
+.como-grid,
+.ayuda-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* =====================================================
+   IMÁGENES CONTROLADAS
+===================================================== */
+.esencia-image img,
+.como-image img,
+.ayuda-image img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 22px 55px rgba(0,0,0,.14);
+  margin: auto;
+}
+
+/* =====================================================
+   SECCIÓN 3 – TARJETAS / CARDS
+===================================================== */
+.cards {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2.6rem 2.2rem;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 22px 50px rgba(0,0,0,.1);
+}
+
+.card .icon {
+  width: 60px;
+  margin: 0 auto 1rem;
+}
+
+/* =====================================================
    SECCIÓN 5 – PRINCIPIOS (COLLAGE)
-========================= */
+===================================================== */
+.principios {
+  background: linear-gradient(135deg, #0c3c6f, #061c33);
+  color: white;
+}
+
 .principios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
+  gap: 1.8rem;
 }
 
 .principios-grid div {
-  background: var(--card-bg);
-  border-radius: 20px;
+  background: rgba(255,255,255,.12);
   padding: 2rem;
+  border-radius: var(--radius);
   text-align: center;
-  box-shadow: 0 12px 30px rgba(0,0,0,.1);
 }
 
 .principios-grid img {
-  width: 80px;
-  margin-bottom: 1rem;
+  width: 42px;
+  margin-bottom: .6rem;
 }
 
-/* =========================
+/* =====================================================
    SECCIÓN 6 – LÍNEA DE TIEMPO
-========================= */
+===================================================== */
 .timeline {
-  background: linear-gradient(135deg, #e0f2fe, #ecfeff);
-  border-radius: 30px;
-  padding: 4rem 2rem;
+  display: grid;
+  gap: 1.4rem;
 }
 
 .timeline-item {
-  background: var(--card-bg);
-  padding: 2rem;
-  border-radius: 18px;
-  margin-bottom: 2rem;
-  box-shadow: 0 15px 40px rgba(0,0,0,.08);
+  background: var(--white);
+  padding: 1.5rem;
+  border-left: 4px solid var(--orange);
+  border-radius: 14px;
 }
 
-/* =========================
+/* =====================================================
    SECCIÓN 7 – AYUDA DEL MUNDO UNIDO
-========================= */
-.ayuda {
-  background: linear-gradient(135deg, #dcfce7, #f0fdf4);
-  border-radius: 30px;
-  padding: 4rem 2rem;
+===================================================== */
+.ayuda-list {
+  list-style: none;
+  margin-top: 1.2rem;
+}
+
+.ayuda-list li {
+  padding: .35rem 0;
+}
+
+/* =====================================================
+   SECCIÓN 8 – DONACIONES
+===================================================== */
+.section-8 {
   text-align: center;
 }
 
-.ayuda h2 {
-  color: #065f46;
-}
-
-.ayuda .btn {
+.btn-donar-grande {
   margin-top: 2rem;
-  padding: 1.2rem 3rem;
-  font-size: 1.2rem;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 50px;
-  text-decoration: none;
+  padding: 1.4rem 3.6rem;
+  font-size: 1.15rem;
 }
 
-/* =========================
+.donar-note {
+  margin-top: 1.5rem;
+  font-size: .9rem;
+  opacity: .7;
+}
+
+/* =====================================================
    FOOTER
-========================= */
-footer {
-  background: var(--bg-dark);
-  color: #cbd5e1;
+===================================================== */
+.footer {
+  background: url("../assets/img/footer-world-map.png") center/cover no-repeat;
+}
+
+.footer-overlay {
+  background: rgba(6,28,51,.9);
+  padding: 4rem 1.5rem;
   text-align: center;
-  padding: 3rem 1.5rem;
+  color: white;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 900px) {
-  .intro-box,
-  .parallax-content {
-    grid-template-columns: 1fr;
+.btn-footer {
+  padding: 1.4rem 3.5rem;
+  font-size: 1.1rem;
+}
+
+.social {
+  margin: 2rem 0;
+}
+
+.social a {
+  color: white;
+  margin: 0 .7rem;
+  font-size: 1.4rem;
+}
+
+/* =====================================================
+   RESPONSIVE – DESKTOP
+===================================================== */
+@media (min-width: 900px) {
+  .esencia-grid,
+  .como-grid,
+  .ayuda-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
   }
 
-  .hero img {
-    max-width: 120px;
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .principios-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
+
 
