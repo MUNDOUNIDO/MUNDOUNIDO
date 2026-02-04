@@ -1,10 +1,11 @@
 :root {
   --blue: #0c3c6f;
   --orange: #f36b21;
+  --dark: #061c33;
   --bg: #f5f7fa;
   --text: #1d1d1f;
-  --glass: rgba(255,255,255,0.88);
-  --radius: 28px;
+  --glass: rgba(255,255,255,0.92);
+  --radius: 34px;
 }
 
 /* RESET */
@@ -18,15 +19,26 @@ body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+img { max-width: 100%; display: block; }
+
+/* ===== LAYOUT ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
 }
 
-/* ===== ANIMACIONES ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* ===== REVEAL ===== */
 .reveal {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
@@ -35,148 +47,225 @@ img {
 .delay-1 { animation-delay: .2s; }
 .delay-2 { animation-delay: .4s; }
 .delay-3 { animation-delay: .6s; }
-.delay-4 { animation-delay: .8s; }
 
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(70px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== HERO ===== */
+/* ===== HERO PARALLAX ===== */
 .hero {
-  min-height: 80vh;
+  position: relative;
+  min-height: 95vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  background: radial-gradient(circle at top, #184f8c, #061c33);
-  padding: 4rem 1.5rem;
+  justify-content: center;
+  overflow: hidden;
   color: white;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, #1e63ad, var(--dark));
+  transform: scale(1.2);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
 
 .logo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 130px;
   background: white;
-  padding: 12px;
-  margin: 0 auto 1.5rem;
+  padding: 14px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 4.2rem);
+  letter-spacing: -2px;
+}
+
+.subtitle {
+  margin: 1.5rem 0 3rem;
+  opacity: .9;
 }
 
 /* ===== BUTTON ===== */
 .btn {
-  display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1rem 3rem;
   border-radius: 999px;
-  background: linear-gradient(135deg, var(--orange), #ff914d);
-  color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: .3s ease;
+  display: inline-block;
+  transition: all .4s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--orange), #ff9a5a);
+  color: white;
 }
 
 .btn:hover {
-  transform: translateY(-6px);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,.3);
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SECTION ===== */
 .section {
-  padding: 5rem 1.5rem;
-  text-align: center;
+  padding: 7rem 0;
 }
 
 .section h2 {
   color: var(--orange);
   margin-bottom: 2rem;
+  font-size: 2.3rem;
 }
 
-/* ===== IMÁGENES ===== */
+/* ===== IMAGES ===== */
 .img-main {
-  max-width: 900px;
-  margin: 3rem auto;
   border-radius: var(--radius);
-  box-shadow: 0 40px 90px rgba(0,0,0,0.18);
+  box-shadow: 0 40px 90px rgba(0,0,0,.25);
+  transition: transform .7s ease;
+}
+
+.img-main:hover {
+  transform: scale(1.05);
 }
 
 /* ===== CARDS ===== */
 .cards {
-  max-width: 1200px;
-  margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .card {
   background: var(--glass);
-  padding: 2.8rem;
+  padding: 3rem;
   border-radius: var(--radius);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+  text-align: center;
+  transition: transform .5s ease;
+  box-shadow: 0 30px 60px rgba(0,0,0,.12);
 }
 
-.card .icon {
-  width: 48px;
-  margin: 0 auto 1rem;
+.card:hover {
+  transform: translateY(-16px);
+}
+
+.card img {
+  width: 54px;
+  margin: 0 auto 1.5rem;
+}
+
+/* ===== PARALLAX ===== */
+.parallax {
+  min-height: 70vh;
+  background-image: url("../assets/img/institucional-unity.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.parallax-content {
+  background: rgba(0,0,0,.55);
+  padding: 4rem;
+  border-radius: var(--radius);
 }
 
 /* ===== PRINCIPIOS ===== */
 .principios {
-  background: linear-gradient(135deg, #0c3c6f, #061c33);
+  background: linear-gradient(135deg, var(--blue), var(--dark));
   color: white;
+  text-align: center;
 }
 
 .principios-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 3rem;
 }
 
-.principios-grid img {
-  width: 42px;
-  margin: auto;
+.principio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.principio img {
+  width: 48px;
 }
 
 /* ===== INSTITUCIONAL ===== */
 .institucional-grid {
-  max-width: 1100px;
-  margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
+  gap: 4rem;
+}
+
+.highlight {
+  color: var(--orange);
+  font-weight: 600;
 }
 
 .timeline-item {
   background: white;
-  padding: 1.2rem;
+  padding: 1.4rem;
   margin-bottom: 1rem;
-  border-left: 4px solid var(--orange);
-  border-radius: 12px;
+  border-left: 5px solid var(--orange);
+  border-radius: 14px;
+}
+
+/* ===== ALCANCE ===== */
+.alcance-list {
+  list-style: none;
+}
+
+.alcance-list li {
+  padding: .8rem 0;
+  font-weight: 500;
+}
+
+/* ===== DONAR ===== */
+.donar {
+  text-align: center;
+  background: white;
 }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: #061c33;
+  background: var(--dark);
   color: white;
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 4rem 1.5rem;
 }
 
 .footer-map {
   max-width: 420px;
   margin: 2rem auto;
-  opacity: 0.6;
+  opacity: .6;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+  .grid-2,
   .institucional-grid {
     grid-template-columns: 1fr;
   }
+
+  .parallax {
+    background-attachment: scroll;
+  }
 }
+
