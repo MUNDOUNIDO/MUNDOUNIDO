@@ -5,7 +5,7 @@
   --bg: #f5f7fa;
   --text: #1d1d1f;
   --glass: rgba(255,255,255,0.92);
-  --radius: 34px;
+  --radius: 36px;
 }
 
 /* RESET */
@@ -15,14 +15,26 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  scroll-snap-type: y mandatory;
 }
 
-img { max-width: 100%; display: block; }
+.snap {
+  scroll-snap-align: start;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
 
 /* ===== LAYOUT ===== */
 .container {
@@ -53,41 +65,40 @@ img { max-width: 100%; display: block; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== HERO PARALLAX ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
+  align-items: center;
   color: white;
   text-align: center;
+  overflow: hidden;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at top, #1e63ad, var(--dark));
-  transform: scale(1.2);
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 700px;
+  max-width: 720px;
 }
 
 .logo {
-  width: 130px;
+  width: 140px;
   background: white;
-  padding: 14px;
+  padding: 16px;
   border-radius: 50%;
   margin: 0 auto 2rem;
 }
 
 .hero h1 {
-  font-size: clamp(3rem, 6vw, 4.2rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   letter-spacing: -2px;
 }
 
@@ -98,7 +109,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== BUTTON ===== */
 .btn {
-  padding: 1rem 3rem;
+  padding: 1rem 3.2rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
@@ -112,11 +123,11 @@ img { max-width: 100%; display: block; }
 }
 
 .btn:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,.3);
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.3);
 }
 
-/* ===== SECTION ===== */
+/* ===== SECTIONS ===== */
 .section {
   padding: 7rem 0;
 }
@@ -124,14 +135,14 @@ img { max-width: 100%; display: block; }
 .section h2 {
   color: var(--orange);
   margin-bottom: 2rem;
-  font-size: 2.3rem;
+  font-size: 2.4rem;
 }
 
 /* ===== IMAGES ===== */
 .img-main {
   border-radius: var(--radius);
-  box-shadow: 0 40px 90px rgba(0,0,0,.25);
-  transition: transform .7s ease;
+  box-shadow: 0 45px 90px rgba(0,0,0,.25);
+  transition: transform .6s ease;
 }
 
 .img-main:hover {
@@ -155,56 +166,63 @@ img { max-width: 100%; display: block; }
 }
 
 .card:hover {
-  transform: translateY(-16px);
+  transform: translateY(-18px);
 }
 
 .card img {
-  width: 54px;
+  width: 56px;
   margin: 0 auto 1.5rem;
 }
 
 /* ===== PARALLAX ===== */
 .parallax {
-  min-height: 70vh;
+  min-height: 80vh;
   background-image: url("../assets/img/institucional-unity.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  color: white;
+  align-items: center;
 }
 
 .parallax-content {
-  background: rgba(0,0,0,.55);
-  padding: 4rem;
+  background: rgba(0,0,0,.6);
+  color: white;
+  padding: 4.5rem;
   border-radius: var(--radius);
+  text-align: center;
 }
 
-/* ===== PRINCIPIOS ===== */
+/* ===== PRINCIPIOS MEJORADOS ===== */
 .principios {
   background: linear-gradient(135deg, var(--blue), var(--dark));
   color: white;
   text-align: center;
 }
 
-.principios-grid {
+.principios-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 3rem;
 }
 
-.principio {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+.principio-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 3rem 2rem;
+  border-radius: var(--radius);
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
-.principio img {
-  width: 48px;
+.principio-card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 30px 60px rgba(0,0,0,.4);
+}
+
+.principio-card img {
+  width: 52px;
+  margin-bottom: 1.5rem;
 }
 
 /* ===== INSTITUCIONAL ===== */
@@ -227,20 +245,31 @@ img { max-width: 100%; display: block; }
   border-radius: 14px;
 }
 
-/* ===== ALCANCE ===== */
-.alcance-list {
-  list-style: none;
+/* ===== ALAS MEJORADO ===== */
+.alas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.alcance-list li {
-  padding: .8rem 0;
-  font-weight: 500;
+.ala-card {
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  padding: 1.8rem;
+  border-radius: 18px;
+  font-weight: 600;
+  text-align: center;
+  transition: transform .4s ease;
+}
+
+.ala-card:hover {
+  transform: translateY(-10px);
 }
 
 /* ===== DONAR ===== */
 .donar {
-  text-align: center;
   background: white;
+  text-align: center;
 }
 
 /* ===== FOOTER ===== */
@@ -257,6 +286,31 @@ img { max-width: 100%; display: block; }
   opacity: .6;
 }
 
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.socials a {
+  color: white;
+  font-size: 1.4rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255,255,255,0.1);
+  transition: background .3s ease, transform .3s ease;
+}
+
+.socials a:hover {
+  background: var(--orange);
+  transform: translateY(-6px);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .grid-2,
@@ -266,6 +320,10 @@ img { max-width: 100%; display: block; }
 
   .parallax {
     background-attachment: scroll;
+  }
+
+  body {
+    scroll-snap-type: none;
   }
 }
 
