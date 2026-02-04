@@ -318,6 +318,41 @@ h2 {
   .principios-grid {
     grid-template-columns: repeat(4, 1fr);
   }
+} 
+/* =========================================
+AJUSTE MOBILE · SECCIÓN NUESTROS PRINCIPIOS
+NO AFECTA DESKTOP
+========================================= */
+@media (max-width: 768px) {
+
+  .section-5.principios {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .principios-collage {
+    gap: 20px;
+  }
+
+  .principio-item {
+    padding: 16px;
+  }
+
+  .principio-item img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .principio-item h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .principio-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
 }
 
 
