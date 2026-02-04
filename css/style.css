@@ -294,5 +294,36 @@ h2 {
     background-attachment: scroll;
   }
 }
+/* ===== BOTÓN PAYPAL ===== */
+.btn-paypal {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.8rem;
+  background: #0070ba;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-paypal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== DONATE BOX ===== */
+.donate-box {
+  max-width: 780px;
+  margin: auto;
+  text-align: center;
+}
+
+.principios-text p {
+  max-width: 820px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
 
 
