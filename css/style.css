@@ -1,312 +1,260 @@
 :root {
   --blue: #0c3c6f;
   --orange: #f36b21;
-  --dark: #061c33;
   --bg: #f5f7fa;
   --text: #1d1d1f;
-  --glass: rgba(255,255,255,0.92);
-  --radius: 36px;
+  --white: #ffffff;
+  --radius: 22px;
 }
 
-/* =====================================================
-  RESET / BASE
-===================================================== */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
-
 body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  scroll-snap-type: y mandatory;
+  line-height: 1.65;
 }
-
-.snap { scroll-snap-align: start; }
 
 img {
   max-width: 100%;
   display: block;
 }
 
-/* =====================================================
-  LAYOUT
-===================================================== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 1.5rem;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* =====================================================
-  ANIMACIONES
-===================================================== */
+/* ANIMACIÓN */
 .reveal {
   opacity: 0;
   animation: fadeUp 1s ease forwards;
 }
 
-.delay-1 { animation-delay: .2s; }
-.delay-2 { animation-delay: .4s; }
-.delay-3 { animation-delay: .6s; }
-
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(70px); }
+  from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* =====================================================
-  HERO
-===================================================== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
+/* GENERALES */
+.section {
+  padding: 4.5rem 1.4rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+h1, h2, h3 {
+  line-height: 1.25;
+}
+
+h2 {
+  color: var(--orange);
+  margin-bottom: 1.8rem;
   text-align: center;
-  overflow: hidden;
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, #1e63ad, var(--dark));
+/* CAJAS DE TEXTO */
+.text-box,
+.donar-box {
+  background: var(--white);
+  padding: 1.8rem;
+  border-radius: var(--radius);
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 720px;
-}
-
-.logo {
-  width: 140px;
-  background: white;
-  padding: 16px;
-  border-radius: 50%;
-  margin: 0 auto 2rem;
-}
-
-.hero h1 {
-  font-size: clamp(3rem, 6vw, 4.5rem);
-  letter-spacing: -2px;
-}
-
-.subtitle {
-  margin: 1.5rem 0 3rem;
-  opacity: .9;
-}
-
-/* =====================================================
-  BOTONES
-===================================================== */
+/* BOTONES */
 .btn {
-  padding: 1rem 3.2rem;
+  display: inline-block;
+  padding: 1.1rem 2.6rem;
   border-radius: 999px;
+  background: linear-gradient(135deg, var(--orange), #ff914d);
+  color: white;
   text-decoration: none;
   font-weight: 600;
-  display: inline-block;
-  transition: all .4s ease;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--orange), #ff9a5a);
-  color: white;
+  transition: .3s ease;
 }
 
 .btn:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 30px 60px rgba(0,0,0,.3);
+  transform: translateY(-4px);
 }
 
-/* =====================================================
-  SECCIONES
-===================================================== */
-.section { padding: 7rem 0; }
-
-.section h2 {
-  color: var(--orange);
-  margin-bottom: 2rem;
-  font-size: 2.4rem;
-}
-
-/* =====================================================
-  IMÁGENES
-===================================================== */
-.img-main {
-  border-radius: var(--radius);
-  box-shadow: 0 45px 90px rgba(0,0,0,.25);
-  transition: transform .6s ease;
-}
-
-.img-main:hover { transform: scale(1.05); }
-
-/* =====================================================
-  CARDS
-===================================================== */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 3rem;
-}
-
-.card {
-  background: var(--glass);
-  padding: 3rem;
-  border-radius: var(--radius);
-  text-align: center;
-  transition: transform .5s ease;
-  box-shadow: 0 30px 60px rgba(0,0,0,.12);
-}
-
-.card:hover { transform: translateY(-18px); }
-
-.card img {
-  width: 56px;
-  margin: 0 auto 1.5rem;
-}
-
-/* =====================================================
-  PARALLAX
-===================================================== */
-.parallax {
-  min-height: 80vh;
-  background-image: url("../assets/img/institucional-unity.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+/* HERO */
+.hero {
+  min-height: 90vh;
+  background: radial-gradient(circle at top, #184f8c, #061c33);
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  color: white;
+  padding: 2rem 1.2rem;
 }
 
-.parallax-content {
-  background: rgba(0,0,0,.6);
-  color: white;
-  padding: 4.5rem;
+.logo {
+  width: 170px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  background: white;
+  padding: 12px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  margin-top: .8rem;
+}
+
+.slogan {
+  font-size: 1.15rem;
+  margin: 1.4rem 0;
+  opacity: .95;
+}
+
+/* GRIDS GENERALES */
+.esencia-grid,
+.como-grid,
+.ayuda-grid {
+  display: grid;
+  gap: 2.5rem;
+}
+
+/* IMÁGENES CONTROLADAS */
+.esencia-image img,
+.como-image img,
+.ayuda-image img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 22px 55px rgba(0,0,0,.14);
+  margin: auto;
+}
+
+/* CARDS */
+.cards {
+  display: grid;
+  gap: 2.2rem;
+}
+
+.card {
+  background: var(--white);
+  padding: 2.6rem 2.2rem;
   border-radius: var(--radius);
   text-align: center;
+  box-shadow: 0 22px 50px rgba(0,0,0,.1);
 }
 
-/* =====================================================
-  PRINCIPIOS
-===================================================== */
+.card .icon {
+  width: 60px;
+  margin: 0 auto 1rem;
+}
+
+/* PRINCIPIOS */
 .principios {
-  background: linear-gradient(135deg, var(--blue), var(--dark));
+  background: linear-gradient(135deg, #0c3c6f, #061c33);
   color: white;
+}
+
+.principios-grid {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.principios-grid div {
+  background: rgba(255,255,255,.12);
+  padding: 2rem;
+  border-radius: var(--radius);
   text-align: center;
 }
 
-.principios-cards {
+.principios-grid img {
+  width: 42px;
+  margin-bottom: .6rem;
+}
+
+/* TIMELINE */
+.timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 3rem;
-}
-
-.principio-card {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
-  padding: 3rem 2rem;
-  border-radius: var(--radius);
-}
-
-/* =====================================================
-  INSTITUCIONAL
-===================================================== */
-.institucional-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.highlight {
-  color: var(--orange);
-  font-weight: 600;
+  gap: 1.4rem;
 }
 
 .timeline-item {
-  background: white;
-  padding: 1.4rem;
-  margin-bottom: 1rem;
-  border-left: 5px solid var(--orange);
+  background: var(--white);
+  padding: 1.5rem;
+  border-left: 4px solid var(--orange);
   border-radius: 14px;
 }
 
-/* =====================================================
-  ALAS
-===================================================== */
-.alas-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+/* AYUDA */
+.ayuda-list {
+  list-style: none;
+  margin-top: 1.2rem;
+}
+
+.ayuda-list li {
+  padding: .35rem 0;
+}
+
+/* DONAR */
+.section-8 {
+  text-align: center;
+}
+
+.btn-donar-grande {
   margin-top: 2rem;
+  padding: 1.4rem 3.6rem;
+  font-size: 1.15rem;
 }
 
-.ala-card {
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  padding: 1.8rem;
-  border-radius: 18px;
-  font-weight: 600;
-  text-align: center;
+.donar-note {
+  margin-top: 1.5rem;
+  font-size: .9rem;
+  opacity: .7;
 }
 
-/* =====================================================
-  DONAR
-===================================================== */
-.donar {
-  background: white;
-  text-align: center;
-}
-
-/* =====================================================
-  FOOTER
-===================================================== */
+/* FOOTER */
 .footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
+  background: url("../assets/img/footer-world-map.png") center/cover no-repeat;
+}
+
+.footer-overlay {
+  background: rgba(6,28,51,.9);
   padding: 4rem 1.5rem;
+  text-align: center;
+  color: white;
 }
 
-.footer-map {
-  max-width: 420px;
-  margin: 2rem auto;
-  opacity: .6;
+.btn-footer {
+  padding: 1.4rem 3.5rem;
+  font-size: 1.1rem;
 }
 
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+.social {
   margin: 2rem 0;
 }
 
-/* =====================================================
-  RESPONSIVE
-===================================================== */
-@media (max-width: 900px) {
-  .grid-2,
-  .institucional-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .parallax { background-attachment: scroll; }
-
-  body { scroll-snap-type: none; }
+.social a {
+  color: white;
+  margin: 0 .7rem;
+  font-size: 1.4rem;
 }
 
+/* DESKTOP */
+@media (min-width: 900px) {
+  .esencia-grid,
+  .como-grid,
+  .ayuda-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .principios-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 
